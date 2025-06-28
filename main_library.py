@@ -1,4 +1,9 @@
 from tkinter import *
+from db_main import *
+
+def get_main_input():
+    main_data = (e_isbn.get(), e_title.get(), e_author.get(), e_genre.get(), e_page_count.get(), e_publish_date.get(), e_publisher.get())
+    ins_main_data(main_data)
 
 #init 
 window = Tk()
@@ -39,6 +44,10 @@ e_publish_date.place(x=140, y=223)
 
 e_publisher = Entry(window)
 e_publisher.place(x=140, y=253)
+
+#button
+btn_insert = Button(window, text="INSERT", command=get_main_input)
+btn_insert.place(x=10, y= 300)
 
 
 window.mainloop()
