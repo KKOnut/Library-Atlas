@@ -5,6 +5,11 @@ def get_main_input():
     main_data = (e_isbn.get(), e_title.get(), e_author.get(), e_genre.get(), e_page_count.get(), e_publish_date.get(), e_publisher.get())
     ins_main_data(main_data)
 
+def new_window():
+    top_level = Toplevel()
+    canvas = Canvas(window, height= 300, width= 300)
+    canvas.pack()
+
 #init 
 window = Tk()
 window.geometry('300x350')
@@ -48,6 +53,10 @@ e_publisher.place(x=140, y=253)
 #button
 btn_insert = Button(window, text="INSERT", command=get_main_input)
 btn_insert.place(x=10, y= 300)
+
+btn_change = Button(window, text="CHANGE WINDOW", command= new_window)
+btn_change.place(x=100, y= 300)
+
 
 
 window.mainloop()
